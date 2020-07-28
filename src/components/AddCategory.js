@@ -12,6 +12,7 @@ const AddCategory = ({ setCategories }) => {
     const handleSubmit = (e) => {
         // Debido a que ya no es muy usado la parte del refresh completo del navegador, que es un comportamiento por default de los formularios se utiliza la siguiente linea de código
         e.preventDefault();
+        console.log('handleSubmit llamado');
 
         if (inputValue.trim().length > 1) {
             // Como no se tiene acceso a las categorias del componente padre hace uso un callback como se muestra
@@ -23,6 +24,7 @@ const AddCategory = ({ setCategories }) => {
     return (
         // Cuando se retorna na unica etiqueta agrupadora como es en este caso el form no es necesario agruparla dentro de un Fragment
         <form onSubmit={handleSubmit}>
+            <p>{inputValue}</p>
             <input
                 type="text"
                 value={inputValue}
